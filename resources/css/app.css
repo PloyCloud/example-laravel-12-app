@@ -9,3 +9,364 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Landing Page Animations */
+
+.hero-title {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-text {
+    display: inline-block;
+    background: linear-gradient(90deg, #f53003, #FF4433, #f53003);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+    .animated-text {
+        background: linear-gradient(90deg, #FF4433, #FF750F, #FF4433);
+        background-size: 200% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.logo-container img {
+    animation: fadeIn 1s ease-out 0.9s forwards;
+    opacity: 0;
+}
+
+.powered-by-text {
+    animation: fadeIn 1s ease-out 1.2s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animated Geometric Background */
+.geometric-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Base shape styles */
+.shape {
+    position: absolute;
+    opacity: 0.15;
+    will-change: transform;
+}
+
+/* Circle shapes */
+.shape-circle {
+    border-radius: 50%;
+}
+
+/* Square shapes */
+.shape-square {
+    border-radius: 8px;
+}
+
+/* Triangle shapes */
+.shape-triangle {
+    width: 0;
+    height: 0;
+    background: transparent !important;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+}
+
+/* Individual shape styling and animations */
+
+/* Shape 1 - Large Red Circle */
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #FF4433, #f53003);
+    top: 10%;
+    left: 5%;
+    animation: float-1 20s ease-in-out infinite, pulse 4s ease-in-out infinite;
+}
+
+/* Shape 2 - Medium Orange Circle */
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #FF750F, #FFB800);
+    top: 60%;
+    right: 10%;
+    animation: float-2 25s ease-in-out infinite, rotate 30s linear infinite;
+}
+
+/* Shape 3 - Large Cyan Square */
+.shape-3 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #00D4FF, #0099FF);
+    top: 20%;
+    right: 15%;
+    animation: float-3 22s ease-in-out infinite, rotate-reverse 40s linear infinite;
+}
+
+/* Shape 4 - Small Red Square */
+.shape-4 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #f53003, #FF4433);
+    bottom: 15%;
+    left: 20%;
+    animation: float-4 18s ease-in-out infinite, pulse 5s ease-in-out infinite;
+}
+
+/* Shape 5 - Large Orange Triangle */
+.shape-5 {
+    border-bottom: 120px solid #FF750F;
+    top: 40%;
+    left: 10%;
+    animation: float-5 24s ease-in-out infinite, rotate 35s linear infinite;
+}
+
+/* Shape 6 - Medium Cyan Triangle */
+.shape-6 {
+    border-bottom: 100px solid #00D4FF;
+    bottom: 20%;
+    right: 25%;
+    animation: float-6 20s ease-in-out infinite, rotate-reverse 25s linear infinite;
+}
+
+/* Shape 7 - Small Yellow Circle */
+.shape-7 {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #FFB800, #FF750F);
+    top: 70%;
+    left: 40%;
+    animation: float-7 16s ease-in-out infinite, pulse 3s ease-in-out infinite;
+}
+
+/* Shape 8 - Medium Orange Square */
+.shape-8 {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #FFB800, #f53003);
+    top: 5%;
+    left: 50%;
+    animation: float-8 21s ease-in-out infinite, rotate 28s linear infinite;
+}
+
+/* Shape 9 - Small Red Triangle */
+.shape-9 {
+    border-bottom: 80px solid #f53003;
+    top: 50%;
+    right: 5%;
+    animation: float-9 19s ease-in-out infinite;
+}
+
+/* Shape 10 - Large Cyan Circle */
+.shape-10 {
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(135deg, #0099FF, #00D4FF);
+    bottom: 10%;
+    left: 60%;
+    animation: float-10 23s ease-in-out infinite, rotate-reverse 32s linear infinite;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .shape {
+        opacity: 0.2;
+    }
+
+    .shape-3,
+    .shape-6,
+    .shape-10 {
+        background: linear-gradient(135deg, #9333EA, #7C3AED);
+    }
+
+    .shape-6 {
+        border-bottom-color: #9333EA;
+    }
+}
+
+/* Keyframe Animations */
+
+/* Floating animations - different patterns */
+@keyframes float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, -30px) scale(0.9); }
+}
+
+@keyframes float-2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-40px, 40px); }
+}
+
+@keyframes float-3 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(20px, 30px); }
+    50% { transform: translate(-15px, 60px); }
+    75% { transform: translate(35px, 20px); }
+}
+
+@keyframes float-4 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(25px, -45px); }
+}
+
+@keyframes float-5 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-35px, 25px); }
+    66% { transform: translate(15px, -20px); }
+}
+
+@keyframes float-6 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -35px); }
+}
+
+@keyframes float-7 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-25px, 30px) scale(1.2); }
+}
+
+@keyframes float-8 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, 25px); }
+}
+
+@keyframes float-9 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 40px); }
+}
+
+@keyframes float-10 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(40px, -30px); }
+    66% { transform: translate(-30px, 20px); }
+}
+
+/* Rotation animations */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Ensure content stays above background */
+.geometric-bg ~ * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .shape {
+        opacity: 0.1;
+    }
+
+    .shape-1,
+    .shape-2,
+    .shape-3,
+    .shape-10 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .shape-4,
+    .shape-7,
+    .shape-8 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .shape-5 {
+        border-left-width: 40px;
+        border-right-width: 40px;
+        border-bottom-width: 80px;
+    }
+
+    .shape-6,
+    .shape-9 {
+        border-left-width: 30px;
+        border-right-width: 30px;
+        border-bottom-width: 60px;
+    }
+}
+
+/* Navigation Header */
+.header-link {
+    animation: fadeIn 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/* Accessibility: Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-title,
+    .logo-container img,
+    .powered-by-text,
+    .header-link {
+        animation: none;
+        opacity: 1;
+    }
+
+    .animated-text {
+        animation: none;
+        background: #f53003;
+        -webkit-text-fill-color: #f53003;
+    }
+
+    .shape {
+        animation: none !important;
+        opacity: 0.1;
+    }
+}
